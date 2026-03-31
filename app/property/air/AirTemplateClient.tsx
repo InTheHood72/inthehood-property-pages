@@ -8,7 +8,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // Constants
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
-const FALLBACK_BACKEND_URL = 'https://hood-staging.preview.emergentagent.com';
+const FALLBACK_BACKEND_URL = 'https://api-production-531c.up.railway.app';
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';
 
 // Fetch backend URL dynamically from Supabase

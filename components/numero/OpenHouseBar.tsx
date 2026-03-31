@@ -33,8 +33,8 @@ async function fetchBackendUrl(): Promise<string> {
     const supabaseUrl = 'https://ojfjawuxpchgeinhdkff.supabase.co';
     const response = await fetch(`${supabaseUrl}/rest/v1/global_settings?select=api_config&limit=1`, {
       headers: {
-        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qZmphd3V4cGNoZ2Vpbmhka2ZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyNDc5OTcsImV4cCI6MjA3MjgyMzk5N30.SW3K2j5bVM2LodWVOVaM11bW_VYb70Ym2irGNeIq2UE',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qZmphd3V4cGNoZ2Vpbmhka2ZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyNDc5OTcsImV4cCI6MjA3MjgyMzk5N30.SW3K2j5bVM2LodWVOVaM11bW_VYb70Ym2irGNeIq2UE',
+        'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+        'Authorization': 'Bearer ' + (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''),
       },
       cache: 'no-store'
     });
@@ -49,7 +49,7 @@ async function fetchBackendUrl(): Promise<string> {
     console.warn('Could not fetch backend URL from Supabase:', e);
   }
   
-  return 'https://hood-staging.preview.emergentagent.com';
+  return 'https://api-production-531c.up.railway.app';
 }
 
 export default function OpenHouseBar({ property, theme = 'light' }: OpenHouseBarProps) {
