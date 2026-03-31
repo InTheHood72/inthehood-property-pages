@@ -1,17 +1,7 @@
-import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
+'use client';
 
-const Pillar9CarouselClient = dynamic(
-  () => import('./Pillar9CarouselClient'),
-  { 
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center min-h-[400px] bg-white">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-500"></div>
-      </div>
-    )
-  }
-);
+import { Suspense } from 'react';
+import Pillar9CarouselClient from './Pillar9CarouselClient';
 
 export default function Pillar9CarouselPage() {
   return (
